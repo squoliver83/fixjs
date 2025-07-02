@@ -39,7 +39,7 @@ const dados = [
 //---------------------------------------------------------------------------
 
 function funcionariosTerceirizados(list) {
-
+  return list.filter(x => x.terceirizado);
 }
 
 //---------------------------------------------------------------------------
@@ -50,7 +50,9 @@ function funcionariosTerceirizados(list) {
 //---------------------------------------------------------------------------
 
 function custoTotal(list) {
-
+  return list
+    .map((x) => x.valorHora * x.horasTrabalhadas)
+    .reduce((x, y) => x + y, 0);
 }
 
 //---------------------------------------------------------------------------
